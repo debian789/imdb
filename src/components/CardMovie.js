@@ -1,13 +1,26 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableWithoutFeedback,
+} from "react-native";
 import React from "react";
 
 export default function CardMovie(props) {
-  const { movie } = props;
-  //console.log(movie);
+  const { movie, navigation } = props;
+  console.log(navigation);
+
+  const goDetail = (id) => {
+    navigation.navigate("Detail");
+  };
+
   return (
-    <View style={styles.containerCard}>
-      <Image style={styles.image} source={{ uri: movie.image }} />
-    </View>
+    <TouchableWithoutFeedback onPress={goDetail}>
+      <View style={styles.containerCard}>
+        <Image style={styles.image} source={{ uri: movie.image }} />
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -24,7 +37,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   image: {
-    //position: "absolute",
     bottom: 0,
     top: 0,
     flex: 1,

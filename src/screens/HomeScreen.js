@@ -3,9 +3,11 @@ import React from "react";
 import { searchMovie } from "../api/imdb";
 import MovieList from "../components/MovieList";
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   const [movieSearch, setMovieSearch] = React.useState();
   const [resultMovie, setResultMovie] = React.useState(null);
+  //console.log(props);
+  const { navigation } = props;
 
   React.useEffect(() => {
     (async () => {
@@ -30,9 +32,14 @@ export default function HomeScreen() {
         style={styles.inputSearch}
         onChangeText={setMovieSearch}
         placeholder="Search movie..."
-        placeholderTextColor="gray"
+        placeholderTextColor="#ccc"
+        defaultValue="hola"
       />
-      <MovieList movies={resultMovie} loadMovies={loadMovies} />
+      <MovieList
+        movies={resultMovie}
+        loadMovies={loadMovies}
+        navigation={navigation}
+      />
     </SafeAreaView>
   );
 }
@@ -44,7 +51,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-    borderColor: "#ccc",
+    // borderColor: "#ccc",
     color: "white",
+    backgroundColor: "gray",
   },
 });
