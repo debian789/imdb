@@ -7,7 +7,9 @@ import {
 } from "react-native";
 import React from "react";
 
-export default function MovieList() {
+export default function MovieList(props) {
+  const { movies, loadMovies } = props;
+
   return (
     <FlatList
       data={movies}
@@ -15,7 +17,7 @@ export default function MovieList() {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.flatListContentContainer}
       keyExtractor={(movie) => movie.id}
-      renderItem={({}) => <Text>{movie.title}</Text>}
+      renderItem={({ item }) => <Text>{item.title}</Text>}
       onEndReached={loadMovies}
       onEndReachedThreshold={0.1}
       ListFooterComponent={
