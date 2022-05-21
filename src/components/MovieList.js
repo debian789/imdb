@@ -47,6 +47,10 @@ const styles = StyleSheet.create({
     marginVertical: 0,
     borderColor: "red",
     borderWidth: 1,
+    flexDirection: "row",
+    top: 0,
+    bottom: 0,
+    height: "auto",
   },
   spinner: {
     marginTop: 20,
