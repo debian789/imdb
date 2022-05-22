@@ -10,6 +10,19 @@ export const searchMovie = async (search) => {
   }
 };
 
+export const trailerMovie = async (id) => {
+  try {
+    console.log("------l....");
+    console.log(id);
+    console.log(API_TRAILER(id));
+    const data = await trailerMock; //  (await fetch(API_TRAILER(id))).json();
+    //console.log(data);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const detailMovie = async (id) => {
   try {
     console.log("------l....");
@@ -21,6 +34,17 @@ export const detailMovie = async (id) => {
   } catch (error) {
     throw error;
   }
+};
+
+const trailerMock = {
+  imDbId: "tt0944947",
+  title: "Game of Thrones",
+  fullTitle: "Game of Thrones (TV Series 2011–2019)",
+  type: "TVSeries",
+  year: "2011",
+  videoId: "BpJYNVhGf1s",
+  videoUrl: "https://www.youtube.com/watch?v=BpJYNVhGf1s",
+  errorMessage: "",
 };
 
 const mockSeach = {
