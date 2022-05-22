@@ -1,5 +1,6 @@
-import { SafeAreaView, TextInput, StyleSheet } from "react-native";
+import { SafeAreaView, TextInput, View, StyleSheet } from "react-native";
 import React from "react";
+import { SearchBar } from "react-native-elements";
 import { searchMovie } from "../api/imdb";
 import MovieList from "../components/MovieList";
 import {
@@ -65,11 +66,11 @@ export default function HomeScreen(props) {
 
   return (
     <SafeAreaView>
-      <TextInput
+      <SearchBar
         style={styles.inputSearch}
-        onChangeText={setMovieSearch}
         placeholder="Search movie..."
-        placeholderTextColor="#ccc"
+        onChangeText={setMovieSearch}
+        value={movieSearch}
       />
       <MovieList
         isNewData={isNewData}
@@ -87,11 +88,13 @@ const styles = StyleSheet.create({
   inputSearch: {
     height: 40,
     margin: 12,
-    borderWidth: 1,
+    //borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-    // borderColor: "#ccc",
+    // backgroundColor: "red",
     color: "white",
-    backgroundColor: "gray",
+    // backgroundColor: "gray",
+    padding: 0,
+    margin: 0,
   },
 });
