@@ -19,11 +19,11 @@ export default function HomeScreen(props) {
   React.useEffect(() => {
     (async () => {
       await loadMovies();
-      loadPaginationData();
     })();
   }, [movieSearch]);
 
   const loadPaginationData = async () => {
+    console.log("pagino data ");
     data = await getSearchStorage();
     let index = indexItem;
     let position = positionItem;
@@ -42,10 +42,17 @@ export default function HomeScreen(props) {
   const loadMovies = async () => {
     try {
       if (movieSearch && movieSearch.length > 3) {
+        setIndexItem(0);
+        setPositionItem(0);
+        setDataPaginate([]);
+
         const dataServer = await searchMovie(movieSearch);
+
         saveSearchStorage(dataServer.results);
+        loadPaginationData();
       }
     } catch (error) {
+      saveSearchStorage([]);
       console.error(error);
     }
   };
@@ -57,7 +64,6 @@ export default function HomeScreen(props) {
         onChangeText={setMovieSearch}
         placeholder="Search movie..."
         placeholderTextColor="#ccc"
-        defaultValue="hola"
       />
       <MovieList
         movies={dataPaginate}

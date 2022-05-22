@@ -8,7 +8,7 @@ export default function MovieList(props) {
   console.log(movies);
 
   const loadMoreMovie = () => {
-    console.log("hooola");
+    console.log("pido traer mas peliculas");
     loadMovies();
   };
 
