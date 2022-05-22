@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  ActivityIndicator,
-} from "react-native";
+import { FlatList, StyleSheet, ActivityIndicator } from "react-native";
 import React from "react";
 import CardMovie from "./CardMovie";
 
@@ -40,7 +34,7 @@ export default function MovieList(props) {
 
 const styles = StyleSheet.create({
   flatListContentContainer: {
-    backgroundColor: "white",
+    backgroundColor: "black",
     borderWidth: 1,
   },
   spinner: {
