@@ -124,6 +124,135 @@ const mockSeach = {
       title: "The Imitation Game",
       description: "(2014)",
     },
+
+    {
+      id: "tt20d84970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt20g84970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt2084d970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt2084s970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt2d084970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt208f4970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt20849g70",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt20h84970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt20r84970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt20849j70",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt2084d970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt20849s70",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt20849h70",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt20849ff70",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "ttd2084970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "The Imitation Game",
+      description: "(2014)",
+    },
+    {
+      id: "tt20s84970",
+      resultType: "Title",
+      image:
+        "https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.7273_AL_.jpg",
+      title: "final",
+      description: "(2014)",
+    },
   ],
   errorMessage: "",
 };

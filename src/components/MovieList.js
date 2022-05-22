@@ -5,9 +5,11 @@ import CardMovie from "./CardMovie";
 export default function MovieList(props) {
   const { movies, loadMovies, navigation } = props;
 
+  console.log(movies);
+
   const loadMoreMovie = () => {
     console.log("hooola");
-    // loadMovies();
+    loadMovies();
   };
 
   return (

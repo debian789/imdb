@@ -17,10 +17,13 @@ export default function HomeScreen(props) {
   React.useEffect(() => {
     (async () => {
       await loadMovies();
+      loadMovieByCache();
+      console.log("solo deberia ejecutar cuando se realiza un busqeuda");
     })();
   }, [movieSearch]);
 
   const paginationData = (data) => {
+    console.log("consultar info paginada");
     let index = indexItem;
     let position = positionItem;
     const paginate = [];
@@ -37,14 +40,20 @@ export default function HomeScreen(props) {
     return [...dataPaginate, ...paginate];
   };
 
+  const loadMovieByCache = () => {
+    // const a = resultMovie;
+
+    // debugger;
+
+    return paginationData(resultMovie);
+  };
+
   const loadMovies = async () => {
     try {
       if (movieSearch && movieSearch.length > 3) {
+        console.log("esto se ejeucta");
         const dataServer = await searchMovie(movieSearch);
-        const dataMovies = paginationData(dataServer.results);
-        console.log(dataMovies);
-
-        setResultMovie(dataMovies);
+        setResultMovie(dataServer.results);
       }
     } catch (error) {
       console.error(error);
@@ -61,8 +70,8 @@ export default function HomeScreen(props) {
         defaultValue="hola"
       />
       <MovieList
-        movies={resultMovie}
-        loadMovies={loadMovies}
+        movies={dataPaginate}
+        loadMovies={loadMovieByCache}
         navigation={navigation}
       />
     </SafeAreaView>
