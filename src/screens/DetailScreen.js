@@ -100,5 +100,6 @@ const styles = StyleSheet.create({
   plotLocal: {
     padding: 20,
     textAlign: "justify",
+    color: "white",
   },
 });

@@ -41,7 +41,6 @@ export default function MovieList(props) {
 const styles = StyleSheet.create({
   flatListContentContainer: {
     backgroundColor: "white",
-    borderColor: "red",
     borderWidth: 1,
   },
   spinner: {

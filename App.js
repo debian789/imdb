@@ -5,7 +5,7 @@ import SearchNavigation from "./src/navigations/SearchNavigation";
 export default function App() {
   //<NavigationContainer theme={DarkTheme}>
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={DarkTheme}>
       <SearchNavigation></SearchNavigation>
     </NavigationContainer>
   );

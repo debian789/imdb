@@ -14,7 +14,11 @@ export default function SearchNavigation() {
         component={HomeScreen}
         options={{ headerTransparent: true, title: "" }}
       />
-      <Stack.Screen name="Detail" component={DetailScreen} />
+      <Stack.Screen
+        name="Detail"
+        component={DetailScreen}
+        options={{ title: "Movie" }}
+      />
     </Stack.Navigator>
   );
 }
