@@ -3,39 +3,49 @@ import React from "react";
 import CardMovie from "./CardMovie";
 
 export default function MovieList(props) {
-  const { movies, loadMovies, navigation } = props;
+  const {
+    movies,
+    loadMovies,
+    navigation,
+    indexInput,
+    positionInput,
+    isNewData,
+  } = props;
 
   console.log(movies);
+  console.log(isNewData);
 
   const loadMoreMovie = () => {
     console.log("pido traer mas peliculas");
-    loadMovies();
+    loadMovies(indexInput, positionInput, movies);
   };
 
   return (
-    <FlatList
-      data={movies}
-      numColumns={3}
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={styles.flatListContentContainer}
-      keyExtractor={(movie) => movie.id}
-      renderItem={({ item }) => (
-        <CardMovie movie={item} navigation={navigation} />
-      )}
-      onEndReached={loadMoreMovie}
-      onEndReachedThreshold={0.1}
-      ListFooterComponent={() => {
-        return (
-          movies && (
-            <ActivityIndicator
-              size="large"
-              style={styles.spinner}
-              color="#AEAEAE"
-            />
-          )
-        );
-      }}
-    />
+    movies && (
+      <FlatList
+        data={movies}
+        numColumns={3}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.flatListContentContainer}
+        keyExtractor={(movie) => movie.id}
+        renderItem={({ item }) => (
+          <CardMovie movie={item} navigation={navigation} />
+        )}
+        onEndReached={loadMoreMovie}
+        onEndReachedThreshold={0.1}
+        ListFooterComponent={() => {
+          return (
+            movies && (
+              <ActivityIndicator
+                size="large"
+                style={styles.spinner}
+                color="#AEAEAE"
+              />
+            )
+          );
+        }}
+      />
+    )
   );
 }
 
