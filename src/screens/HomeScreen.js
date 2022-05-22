@@ -6,7 +6,6 @@ import MovieList from "../components/MovieList";
 export default function HomeScreen(props) {
   const [movieSearch, setMovieSearch] = React.useState();
   const [resultMovie, setResultMovie] = React.useState(null);
-  //console.log(props);
   const { navigation } = props;
 
   React.useEffect(() => {

@@ -13,25 +13,20 @@ export default function DetailScreen(props) {
 
   React.useEffect(() => {
     (async () => {
-      console.log("lllegue aqui ?");
       loadDetailMovie();
     })();
   }, []);
 
   const loadDetailMovie = async () => {
     try {
-      console.log("ajsdfafsafa");
       const data = await detailMovie(id);
       const trailer = await trailerMovie(id);
-      console.log(data);
       setMovieItem(data);
       setTrailerItem(trailer);
     } catch (error) {
       console.log(error);
     }
   };
-
-  console.log(movieItem);
 
   if (movieItem && trailerItem) {
     return (
