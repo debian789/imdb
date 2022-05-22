@@ -50,13 +50,18 @@ export default function HomeScreen(props) {
       }
       //console.log("se ejecuta esto ??? ");
     }
+
+    console.log(`1) Informaciòn data ${data.length}`);
+    console.log(`2) Informaciòn index ${indexInput}`);
+    console.log(`3) Informaciòn positionInput ${positionInput}`);
     console.log(`4) Informaciòn oldData ${oldData.length}`);
     console.log(`5) Informacion paginate  ${paginate.length}`);
     // setDataPaginate([...oldData, ...paginate]);
     setIndexItem(index + pagination);
     setPositionItem(position);
 
-    return [...oldData, ...paginate];
+    setDataPaginate([...oldData, ...paginate]);
+    //return [...oldData, ...paginate];
   };
 
   const loadMovies = async () => {
@@ -70,7 +75,8 @@ export default function HomeScreen(props) {
         console.log("estoy aqui");
         console.log(dataServer.results.length);
         console.log(dataPaginate.length);*/
-        setDataPaginate(await loadPaginationData(0, 0, []));
+        // setDataPaginate(await loadPaginationData(0, 0, []));
+        loadPaginationData(0, 0, []);
         setIsNewData(true);
       }
     } catch (error) {
