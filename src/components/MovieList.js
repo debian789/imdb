@@ -5,6 +5,11 @@ import CardMovie from "./CardMovie";
 export default function MovieList(props) {
   const { movies, loadMovies, navigation } = props;
 
+  const loadMoreMovie = () => {
+    console.log("hooola");
+    // loadMovies();
+  };
+
   return (
     <FlatList
       data={movies}
@@ -15,7 +20,7 @@ export default function MovieList(props) {
       renderItem={({ item }) => (
         <CardMovie movie={item} navigation={navigation} />
       )}
-      onEndReached={loadMovies}
+      onEndReached={loadMoreMovie}
       onEndReachedThreshold={0.1}
       ListFooterComponent={() => {
         return (

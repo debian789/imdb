@@ -127,6 +127,7 @@ const mockSeach = {
   ],
   errorMessage: "",
 };
+
 const detailMock = {
   id: "tt0944947",
   title: "Game of Thrones",
