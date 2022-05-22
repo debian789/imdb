@@ -1,8 +1,9 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import { detailMovie, trailerMovie } from "../api/imdb";
 
 import YoutubePlayer from "react-native-youtube-iframe";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function DetailScreen(props) {
   const { navigation, route } = props;
@@ -29,12 +30,20 @@ export default function DetailScreen(props) {
   };
 
   if (movieItem && trailerItem) {
+    console.log(movieItem.image);
     return (
-      <View>
-        <Text>{movieItem.title}</Text>
-        <Text>{movieItem.genres}</Text>
-        <Text>{movieItem.year}</Text>
-        <Text>{movieItem.plotLocal}</Text>
+      <ScrollView>
+        <View>
+          <Image style={styles.image} source={{ uri: movieItem.image }} />
+          <View style={styles.continerTitleBK}></View>
+          <View style={styles.continerTitle}>
+            <Text style={styles.title}>{movieItem.title}</Text>
+            <Text style={styles.info}>{movieItem.genres}</Text>
+            <Text style={styles.info}>{movieItem.year}</Text>
+          </View>
+        </View>
+        <Text style={styles.plotLocal}>{movieItem.plotLocal}</Text>
+
         <View>
           <YoutubePlayer
             height={300}
@@ -42,7 +51,7 @@ export default function DetailScreen(props) {
             videoId={trailerItem.videoId}
           />
         </View>
-      </View>
+      </ScrollView>
     );
   } else {
     return (
@@ -52,3 +61,44 @@ export default function DetailScreen(props) {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  image: {
+    bottom: 0,
+    top: 0,
+    // flex: 1,
+    height: 300,
+    width: "auto",
+    resizeMode: "center",
+    margin: 0,
+    padding: 0,
+  },
+  continerTitleBK: {
+    backgroundColor: "gray",
+    opacity: 0.2,
+    height: 90,
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    left: 0,
+  },
+  continerTitle: {
+    padding: 20,
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    left: 0,
+  },
+  title: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  info: {
+    color: "white",
+  },
+  plotLocal: {
+    padding: 20,
+    textAlign: "justify",
+  },
+});
