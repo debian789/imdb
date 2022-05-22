@@ -9,10 +9,10 @@ import React from "react";
 
 export default function CardMovie(props) {
   const { movie, navigation } = props;
-  console.log(navigation);
+  //console.log(navigation);
 
-  const goDetail = (id) => {
-    navigation.navigate("Detail");
+  const goDetail = () => {
+    navigation.navigate("Detail", { id: movie.id });
   };
 
   return (

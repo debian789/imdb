@@ -12,6 +12,8 @@ export const searchMovie = async (search) => {
 
 export const detailMovie = async (id) => {
   try {
+    console.log("------l....");
+    console.log(id);
     console.log(API_DETAIL(id));
     const data = await detailMock; //  (await fetch(API_DETAIL(id))).json();
     //console.log(data);
@@ -121,7 +123,8 @@ const detailMock = {
   runtimeMins: null,
   runtimeStr: null,
   plot: "In the mythical continent of Westeros, several powerful families fight for control of the Seven Kingdoms. As conflict erupts in the kingdoms of men, an ancient enemy rises once again to threaten them all. Meanwhile, the last heirs of a recently usurped dynasty plot to take back their homeland from across the Narrow Sea.",
-  plotLocal: "",
+  plotLocal:
+    "En una tierra donde los veranos duran décadas y los inviernos pueden durar toda una vida, los problemas acechan. Desde las maquinaciones del sur a las salvajes tierras del este, pasando por el helado norte y el milenario muro que protege el reino de las fuerzas tenebrosas, dos poderosas familias mantienen un enfrentamiento letal por gobernar los Siete Reinos de Poniente. Mientras la traición, la lujuria y las fuerzas sobrenaturales sacuden los pilares de los reinos, la sangrienta batalla por el trono de Hierro tendrá consecuencias imprevistas y trascendentales. El invierno se acerca. Que empiece 'Juego de tronos'.",
   plotLocalIsRtl: false,
   awards:
     "Top rated TV #13 | Won 59 Primetime Emmys, 386 wins & 632 nominations total",
@@ -277,13 +280,13 @@ const detailMock = {
     { id: "co0335036", name: "Television 360" },
     { id: "co0167350", name: "Grok! Studio" },
   ],
-  countries: "USA, UK",
+  countries: "ESTADOS UNIDOS, REINO UNIDO",
   countryList: [
-    { key: "USA", value: "USA" },
-    { key: "UK", value: "UK" },
+    { key: "USA", value: "ESTADOS UNIDOS" },
+    { key: "UK", value: "REINO UNIDO" },
   ],
-  languages: "English",
-  languageList: [{ key: "English", value: "English" }],
+  languages: "Inglés",
+  languageList: [{ key: "English", value: "Inglés" }],
   contentRating: "TV-MA",
   imDbRating: "9.2",
   imDbRatingVotes: "1986556",
@@ -292,7 +295,22 @@ const detailMock = {
   wikipedia: null,
   posters: null,
   images: null,
-  trailer: null,
+  trailer: {
+    imDbId: "tt0944947",
+    title: "Game of Thrones",
+    fullTitle: "Game of Thrones (TV Series 2011–2019)",
+    type: "TVSeries",
+    year: "2011",
+    videoId: "vi59490329",
+    videoTitle: "Official Series Trailer",
+    videoDescription: "It’s time to return to Westeros.",
+    thumbnailUrl:
+      "https://m.media-amazon.com/images/M/MV5BZTg4YzdjNTctNDg5Mi00ZmU1LTkzOWEtNmMyNDBjZjNhNTJiXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg",
+    uploadDate: null,
+    link: "https://www.imdb.com/video/vi59490329",
+    linkEmbed: "https://www.imdb.com/video/imdb/vi59490329/imdb/embed",
+    errorMessage: "",
+  },
   boxOffice: {
     budget: "",
     openingWeekendUSA: "",
@@ -399,20 +417,4 @@ const detailMock = {
   },
   tvEpisodeInfo: null,
   errorMessage: null,
-};
-const trailerMock = {
-  imDbId: "tt0944947",
-  title: "Game of Thrones",
-  fullTitle: "Game of Thrones (TV Series 2011–2019)",
-  type: "TVSeries",
-  year: "2011",
-  videoId: "vi59490329",
-  videoTitle: "Official Series Trailer",
-  videoDescription: "It’s time to return to Westeros.",
-  thumbnailUrl:
-    "https://m.media-amazon.com/images/M/MV5BZTg4YzdjNTctNDg5Mi00ZmU1LTkzOWEtNmMyNDBjZjNhNTJiXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg",
-  uploadDate: null,
-  link: "https://www.imdb.com/video/vi59490329",
-  linkEmbed: "https://www.imdb.com/video/imdb/vi59490329/imdb/embed",
-  errorMessage: "",
 };
