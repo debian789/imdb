@@ -7,3 +7,5 @@ export const API_DETAIL = (id) =>
 
 export const API_TRAILER = (id) =>
   `https://imdb-api.com/en/API/YouTubeTrailer/${API_KEY}/${id}`;
+
+export const KEY_STORAGE_SEARCH = "KEY_STORAGE_SEARCH";

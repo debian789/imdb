@@ -2,12 +2,14 @@ import { SafeAreaView, TextInput, StyleSheet } from "react-native";
 import React from "react";
 import { searchMovie } from "../api/imdb";
 import MovieList from "../components/MovieList";
-import { set } from "react-native-reanimated";
+import {
+  getSearchStorage,
+  saveSearchStorage,
+} from "../storage/movieSearchStorage";
 
 export default function HomeScreen(props) {
   const pagination = 3;
   const [movieSearch, setMovieSearch] = React.useState();
-  const [resultMovie, setResultMovie] = React.useState(null);
   const [indexItem, setIndexItem] = React.useState(0);
   const [positionItem, setPositionItem] = React.useState(0);
   const [dataPaginate, setDataPaginate] = React.useState([]);
@@ -17,13 +19,12 @@ export default function HomeScreen(props) {
   React.useEffect(() => {
     (async () => {
       await loadMovies();
-      loadMovieByCache();
-      console.log("solo deberia ejecutar cuando se realiza un busqeuda");
+      loadPaginationData();
     })();
   }, [movieSearch]);
 
-  const paginationData = (data) => {
-    console.log("consultar info paginada");
+  const loadPaginationData = async () => {
+    data = await getSearchStorage();
     let index = indexItem;
     let position = positionItem;
     const paginate = [];
@@ -32,28 +33,17 @@ export default function HomeScreen(props) {
         paginate.push(data[position]);
         position = index + i;
       }
-
       setIndexItem(index + pagination);
       setPositionItem(position);
       setDataPaginate([...dataPaginate, ...paginate]);
     }
-    return [...dataPaginate, ...paginate];
-  };
-
-  const loadMovieByCache = () => {
-    // const a = resultMovie;
-
-    // debugger;
-
-    return paginationData(resultMovie);
   };
 
   const loadMovies = async () => {
     try {
       if (movieSearch && movieSearch.length > 3) {
-        console.log("esto se ejeucta");
         const dataServer = await searchMovie(movieSearch);
-        setResultMovie(dataServer.results);
+        saveSearchStorage(dataServer.results);
       }
     } catch (error) {
       console.error(error);
@@ -71,7 +61,7 @@ export default function HomeScreen(props) {
       />
       <MovieList
         movies={dataPaginate}
-        loadMovies={loadMovieByCache}
+        loadMovies={loadPaginationData}
         navigation={navigation}
       />
     </SafeAreaView>
