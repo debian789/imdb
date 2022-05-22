@@ -12,11 +12,7 @@ export default function MovieList(props) {
     isNewData,
   } = props;
 
-  console.log(movies);
-  console.log(isNewData);
-
   const loadMoreMovie = () => {
-    console.log("pido traer mas peliculas");
     loadMovies(indexInput, positionInput, movies);
   };
 

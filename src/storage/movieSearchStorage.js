@@ -6,7 +6,7 @@ export const saveSearchStorage = async (value) => {
     value = JSON.stringify(value);
     await AsyncStorage.setItem(KEY_STORAGE_SEARCH, value);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
@@ -16,6 +16,6 @@ export const getSearchStorage = async () => {
     debugger;
     return data != null ? JSON.parse(data) : null;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };

@@ -1,7 +1,6 @@
 import { API_SEARCH, API_DETAIL, API_TRAILER } from "../commons/contants";
 export const searchMovie = async (search) => {
   try {
-    console.log(API_SEARCH(search));
     const data = await mockSeach; //  (await fetch(API_SEARCH(search))).json();
     return data;
   } catch (error) {
@@ -11,7 +10,6 @@ export const searchMovie = async (search) => {
 
 export const trailerMovie = async (id) => {
   try {
-    console.log(API_TRAILER(id));
     const data = await trailerMock; //  (await fetch(API_TRAILER(id))).json();
     return data;
   } catch (error) {
@@ -21,7 +19,6 @@ export const trailerMovie = async (id) => {
 
 export const detailMovie = async (id) => {
   try {
-    console.log(API_DETAIL(id));
     const data = await detailMock; //  (await fetch(API_DETAIL(id))).json();
     return data;
   } catch (error) {

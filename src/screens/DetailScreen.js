@@ -25,12 +25,11 @@ export default function DetailScreen(props) {
       setMovieItem(data);
       setTrailerItem(trailer);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
   if (movieItem && trailerItem) {
-    console.log(movieItem.image);
     return (
       <ScrollView>
         <View>
