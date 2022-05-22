@@ -1,7 +1,14 @@
-import { API_SEARCH, API_DETAIL, API_TRAILER } from "../commons/contants";
+import {
+  API_SEARCH,
+  API_DETAIL,
+  API_TRAILER,
+  ACTIVE_MOCK,
+} from "../commons/contants";
 export const searchMovie = async (search) => {
   try {
-    const data = await mockSeach; //  (await fetch(API_SEARCH(search))).json();
+    const data = (await ACTIVE_MOCK)
+      ? mockSeach
+      : (await fetch(API_SEARCH(search))).json();
     return data;
   } catch (error) {
     throw error;
@@ -10,7 +17,9 @@ export const searchMovie = async (search) => {
 
 export const trailerMovie = async (id) => {
   try {
-    const data = await trailerMock; //  (await fetch(API_TRAILER(id))).json();
+    const data = (await ACTIVE_MOCK)
+      ? trailerMock
+      : (await fetch(API_TRAILER(id))).json();
     return data;
   } catch (error) {
     throw error;
@@ -19,7 +28,9 @@ export const trailerMovie = async (id) => {
 
 export const detailMovie = async (id) => {
   try {
-    const data = await detailMock; //  (await fetch(API_DETAIL(id))).json();
+    const data = (await ACTIVE_MOCK)
+      ? detailMock
+      : (await fetch(API_DETAIL(id))).json();
     return data;
   } catch (error) {
     throw error;
@@ -40,7 +51,8 @@ const trailerMock = {
 const mockSeach = {
   searchType: "Title",
   expression: "game",
-  results: [
+  results: null,
+  results2: [
     {
       id: "tt0119174",
       resultType: "Title",

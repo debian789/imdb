@@ -1,4 +1,5 @@
-export const API_KEY = ""; //  "k_c2c8swew"; //k_aaaaaaaa //k_aaaaaaaa
+export const ACTIVE_MOCK = true;
+export const API_KEY = ACTIVE_MOCK ? "" : "k_aaaaaaaa"; //k_aaaaaaaa //k_aaaaaaaa
 export const API_SEARCH = (search) =>
   `https://imdb-api.com/es/API/Search/${API_KEY}/${search}`;
 
