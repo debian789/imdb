@@ -9,7 +9,7 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "build:apk": "eas build -p android --profile previewApk",
-    "publish": "eas build -p android"
+    "build": "eas build -p android"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.5",
