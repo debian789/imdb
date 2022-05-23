@@ -1,6 +1,10 @@
 import { View, Image, Text, StyleSheet } from "react-native";
 import React from "react";
 
+/**
+ * Componente para mostrar el mensaje de buscar peliculas
+ * @returns
+ */
 export default function MesageSearch() {
   return (
     <View style={styles.container}>

@@ -1,14 +1,17 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import { detailMovie, trailerMovie } from "../api/imdb";
-
 import YoutubePlayer from "react-native-youtube-iframe";
 import { ScrollView } from "react-native-gesture-handler";
 
+/**
+ * Screen para visualizar los detalles de una pelicula
+ * @param {*} props
+ * @returns
+ */
 export default function DetailScreen(props) {
   const { navigation, route } = props;
   const { id } = route.params;
-
   const [movieItem, setMovieItem] = React.useState(null);
   const [trailerItem, setTrailerItem] = React.useState(null);
 
@@ -18,6 +21,9 @@ export default function DetailScreen(props) {
     })();
   }, []);
 
+  /**
+   * Metodo para cargar los datos para el detalle de la pelicula
+   */
   const loadDetailMovie = async () => {
     try {
       const data = await detailMovie(id);

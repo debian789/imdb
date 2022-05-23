@@ -1,3 +1,6 @@
+/**
+ * Constantes globales
+ */
 export const ACTIVE_MOCK = false;
 export const API_KEY = ACTIVE_MOCK ? "" : "k_20mjzmqi"; //k_aaaaaaaa //k_aaaaaaaa
 export const API_SEARCH = (search) =>

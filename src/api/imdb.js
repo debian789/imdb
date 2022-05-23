@@ -6,6 +6,11 @@ import {
 } from "../commons/contants";
 import { detailMock, mockSeach, trailerMock } from "./mockData";
 
+/**
+ * Metodo para consultar peliculas
+ * @param {string} search
+ * @returns
+ */
 export const searchMovie = async (search) => {
   try {
     console.log(API_SEARCH(search));
@@ -18,6 +23,11 @@ export const searchMovie = async (search) => {
   }
 };
 
+/**
+ * Metodo para realizar consulta de trailers
+ * @param {string} id
+ * @returns
+ */
 export const trailerMovie = async (id) => {
   try {
     const data = (await ACTIVE_MOCK)
@@ -29,6 +39,11 @@ export const trailerMovie = async (id) => {
   }
 };
 
+/**
+ * Metodo para consultar detalles de una pelicula
+ * @param {string} id
+ * @returns
+ */
 export const detailMovie = async (id) => {
   try {
     const data = (await ACTIVE_MOCK)

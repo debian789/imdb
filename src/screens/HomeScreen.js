@@ -8,6 +8,11 @@ import {
   saveSearchStorage,
 } from "../storage/movieSearchStorage";
 
+/**
+ * Screen para visualizar la vista principal de busqueda
+ * @param {*} props
+ * @returns
+ */
 export default function HomeScreen(props) {
   const pagination = 3;
   const [movieSearch, setMovieSearch] = React.useState();
@@ -16,8 +21,6 @@ export default function HomeScreen(props) {
   const [dataPaginate, setDataPaginate] = React.useState([]);
   const [isNewData, setIsNewData] = React.useState(false);
   const [notFound, setNotFound] = React.useState(false);
-
-  const { navigation } = props;
 
   React.useEffect(() => {
     (async () => {
@@ -29,6 +32,9 @@ export default function HomeScreen(props) {
     })();
   }, [movieSearch]);
 
+  /**
+   * Metodo para inicializar los datos
+   */
   const resetSearch = () => {
     setIndexItem(0);
     setPositionItem(0);
@@ -36,6 +42,12 @@ export default function HomeScreen(props) {
     saveSearchStorage([]);
   };
 
+  /**
+   * Permite cargar la informacion guardada en localStorage
+   * @param {*} indexInput
+   * @param {*} positionInput
+   * @param {*} oldData
+   */
   const loadPaginationData = async (indexInput, positionInput, oldData) => {
     data = await getSearchStorage();
     let index = indexInput;
@@ -54,6 +66,9 @@ export default function HomeScreen(props) {
     setDataPaginate([...oldData, ...paginate]);
   };
 
+  /**
+   * Permite cargar los datos  de peliculas desdel el API
+   */
   const loadMovies = async () => {
     try {
       if (movieSearch && movieSearch.length > 3) {

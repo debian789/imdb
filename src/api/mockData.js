@@ -1,3 +1,7 @@
+/**
+ * Datos mock de los servicios de Imdb
+ */
+
 export const trailerMock = {
   imDbId: "tt0944947",
   title: "Game of Thrones",

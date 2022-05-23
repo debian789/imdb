@@ -1,6 +1,10 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 
+/**
+ * Componente para visualizar mensaje de peliculas no encontradas
+ * @returns
+ */
 export default function MessageNotFound() {
   return (
     <View style={styles.container}>

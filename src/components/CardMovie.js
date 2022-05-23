@@ -8,10 +8,18 @@ import {
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
+/**
+ * Componente para visualizar portada de peliculas
+ * @param {*} props
+ * @returns
+ */
 export default function CardMovie(props) {
   const { movie } = props;
   const navigation = useNavigation();
 
+  /**
+   * Metodo para navegar a la interfaz de Detail
+   */
   const goDetail = () => {
     navigation.navigate("Detail", { id: movie.id });
   };

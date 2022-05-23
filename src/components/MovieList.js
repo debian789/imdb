@@ -9,10 +9,18 @@ import CardMovie from "./CardMovie";
 import MesageSearch from "./MesageSearch";
 import MessageNotFound from "./MessageNotFound";
 
+/**
+ * Componente para visualizar el listado de peliculas
+ * @param {*} props
+ * @returns
+ */
 export default function MovieList(props) {
   const { movies, loadMovies, indexInput, positionInput, isNewData, notFound } =
     props;
 
+  /**
+   * Metodo para cargar mas peliculas
+   */
   const loadMoreMovie = () => {
     loadMovies(indexInput, positionInput, movies);
   };
