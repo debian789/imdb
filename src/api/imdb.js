@@ -51,8 +51,8 @@ const trailerMock = {
 const mockSeach = {
   searchType: "Title",
   expression: "game",
-  results: null,
-  results2: [
+  results4: null,
+  results: [
     {
       id: "tt0119174",
       resultType: "Title",

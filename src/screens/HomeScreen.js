@@ -1,4 +1,4 @@
-import { SafeAreaView, TextInput, View, StyleSheet } from "react-native";
+import { SafeAreaView, TextInput, Text, View, StyleSheet } from "react-native";
 import React from "react";
 import { SearchBar } from "react-native-elements";
 import { searchMovie } from "../api/imdb";
@@ -22,6 +22,9 @@ export default function HomeScreen(props) {
     (async () => {
       resetSearch();
       await loadMovies();
+      if (!movieSearch) {
+        setIsNewData(false);
+      }
     })();
   }, [movieSearch]);
 
@@ -37,7 +40,7 @@ export default function HomeScreen(props) {
     let index = indexInput;
     let position = positionInput;
     const paginate = [];
-    if (data.length >= index) {
+    if (data && data.length >= index) {
       for (var i = 1; pagination >= i; i++) {
         if (data.length > position) {
           paginate.push(data[position]);
@@ -65,35 +68,41 @@ export default function HomeScreen(props) {
   };
 
   return (
-    <SafeAreaView>
-      <SearchBar
-        style={styles.inputSearch}
-        placeholder="Search movie..."
-        onChangeText={setMovieSearch}
-        value={movieSearch}
-      />
-      <MovieList
-        isNewData={isNewData}
-        movies={dataPaginate}
-        loadMovies={loadPaginationData}
-        navigation={navigation}
-        indexInput={indexItem}
-        positionInput={positionItem}
-      />
+    <SafeAreaView style={styles.containerItem}>
+      <View>
+        <SearchBar
+          style={styles.inputSearch}
+          placeholder="Search movie..."
+          onChangeText={setMovieSearch}
+          value={movieSearch}
+        />
+        <MovieList
+          isNewData={isNewData}
+          movies={dataPaginate}
+          loadMovies={loadPaginationData}
+          navigation={navigation}
+          indexInput={indexItem}
+          positionInput={positionItem}
+        />
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  containerItem: {
+    flex: 1,
+    bottom: 0,
+    right: 0,
+    top: 0,
+    left: 0,
+  },
   inputSearch: {
     height: 40,
     margin: 12,
-    //borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-    // backgroundColor: "red",
     color: "white",
-    // backgroundColor: "gray",
     padding: 0,
     margin: 0,
   },
