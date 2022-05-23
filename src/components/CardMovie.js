@@ -6,9 +6,11 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CardMovie(props) {
-  const { movie, navigation } = props;
+  const { movie } = props;
+  const navigation = useNavigation();
 
   const goDetail = () => {
     navigation.navigate("Detail", { id: movie.id });
@@ -46,16 +48,17 @@ const styles = StyleSheet.create({
     flex: 1,
     left: 0,
     right: 0,
-    height: 30,
-    paddingTop: 5,
+    height: 60,
+    paddingTop: 10,
     textAlign: "center",
+    fontSize: 20,
   },
 
   image: {
     bottom: 0,
     top: 0,
     flex: 1,
-    height: 800,
+    height: 500,
     width: "auto",
     resizeMode: "stretch",
     margin: 0,

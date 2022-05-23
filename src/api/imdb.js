@@ -4,7 +4,7 @@ import {
   API_TRAILER,
   ACTIVE_MOCK,
 } from "../commons/contants";
-import { detailMock, mockSeach, mockSeach1, trailerMock } from "./mockData";
+import { detailMock, mockSeach, trailerMock } from "./mockData";
 
 export const searchMovie = async (search) => {
   try {

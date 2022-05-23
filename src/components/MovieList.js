@@ -1,19 +1,17 @@
-import { FlatList, StyleSheet, ActivityIndicator } from "react-native";
+import {
+  FlatList,
+  StyleSheet,
+  ActivityIndicator,
+  Platform,
+} from "react-native";
 import React from "react";
 import CardMovie from "./CardMovie";
 import MesageSearch from "./MesageSearch";
 import MessageNotFound from "./MessageNotFound";
 
 export default function MovieList(props) {
-  const {
-    movies,
-    loadMovies,
-    navigation,
-    indexInput,
-    positionInput,
-    isNewData,
-    notFound,
-  } = props;
+  const { movies, loadMovies, indexInput, positionInput, isNewData, notFound } =
+    props;
 
   const loadMoreMovie = () => {
     loadMovies(indexInput, positionInput, movies);
@@ -28,9 +26,7 @@ export default function MovieList(props) {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.flatListContentContainer}
           keyExtractor={(movie) => movie.id}
-          renderItem={({ item }) => (
-            <CardMovie movie={item} navigation={navigation} />
-          )}
+          renderItem={({ item }) => <CardMovie movie={item} />}
           onEndReached={loadMoreMovie}
           onEndReachedThreshold={0.1}
           ListFooterComponent={() => {
@@ -59,6 +55,7 @@ const styles = StyleSheet.create({
   flatListContentContainer: {
     backgroundColor: "black",
     borderWidth: 1,
+    marginTop: Platform.OS === "android" ? 60 : 0,
   },
   spinner: {
     marginTop: 20,

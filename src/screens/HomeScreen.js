@@ -1,4 +1,4 @@
-import { SafeAreaView, TextInput, Text, View, StyleSheet } from "react-native";
+import { SafeAreaView, View, StyleSheet } from "react-native";
 import React from "react";
 import { SearchBar } from "react-native-elements";
 import { searchMovie } from "../api/imdb";
@@ -88,7 +88,6 @@ export default function HomeScreen(props) {
           isNewData={isNewData}
           movies={dataPaginate}
           loadMovies={loadPaginationData}
-          navigation={navigation}
           indexInput={indexItem}
           positionInput={positionItem}
           notFound={notFound}

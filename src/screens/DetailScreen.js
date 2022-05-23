@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
   image: {
     bottom: 0,
     top: 0,
-    // flex: 1,
     height: 300,
     width: "auto",
     resizeMode: "center",
