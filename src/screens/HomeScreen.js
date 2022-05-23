@@ -9,7 +9,7 @@ import {
 } from "../storage/movieSearchStorage";
 
 export default function HomeScreen(props) {
-  const pagination = 12;
+  const pagination = 3;
   const [movieSearch, setMovieSearch] = React.useState();
   const [indexItem, setIndexItem] = React.useState(0);
   const [positionItem, setPositionItem] = React.useState(0);

@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     top: 0,
     flex: 1,
-    height: 200,
+    height: 800,
     width: "auto",
     resizeMode: "stretch",
     margin: 0,

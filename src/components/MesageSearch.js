@@ -15,17 +15,12 @@ export default function MesageSearch() {
 
 const styles = StyleSheet.create({
   container: {
-    //backgroundColor: "red",
-    //flex: 1,
     position: "relative",
-    //position: "absolute",
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
     justifyContent: "center",
-    //alignItems: "center",
-    //height: "auto",
     padding: 40,
   },
   message: {
@@ -35,13 +30,10 @@ const styles = StyleSheet.create({
   },
   image: {
     bottom: 0,
-    //top: 0,
-    //flex: 1,
     height: 300,
     width: "auto",
     resizeMode: "stretch",
     margin: 0,
     padding: 0,
-    //position: "absolute",
   },
 });

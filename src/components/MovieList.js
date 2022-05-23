@@ -24,7 +24,7 @@ export default function MovieList(props) {
       movies && (
         <FlatList
           data={movies}
-          numColumns={3}
+          numColumns={1}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.flatListContentContainer}
           keyExtractor={(movie) => movie.id}
