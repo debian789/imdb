@@ -2,6 +2,7 @@ import { FlatList, StyleSheet, ActivityIndicator } from "react-native";
 import React from "react";
 import CardMovie from "./CardMovie";
 import MesageSearch from "./MesageSearch";
+import MessageNotFound from "./MessageNotFound";
 
 export default function MovieList(props) {
   const {
@@ -11,6 +12,7 @@ export default function MovieList(props) {
     indexInput,
     positionInput,
     isNewData,
+    notFound,
   } = props;
 
   const loadMoreMovie = () => {
@@ -46,8 +48,9 @@ export default function MovieList(props) {
         />
       )
     );
+  } else if (notFound) {
+    return <MessageNotFound />;
   } else {
-    console.log("---ddd--");
     return <MesageSearch />;
   }
 }

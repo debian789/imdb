@@ -15,6 +15,7 @@ export default function HomeScreen(props) {
   const [positionItem, setPositionItem] = React.useState(0);
   const [dataPaginate, setDataPaginate] = React.useState([]);
   const [isNewData, setIsNewData] = React.useState(false);
+  const [notFound, setNotFound] = React.useState(false);
 
   const { navigation } = props;
 
@@ -58,9 +59,16 @@ export default function HomeScreen(props) {
       if (movieSearch && movieSearch.length > 3) {
         const dataServer = await searchMovie(movieSearch);
         resetSearch();
-        saveSearchStorage(dataServer.results);
+        if (dataServer && dataServer.results) {
+          saveSearchStorage(dataServer.results);
+          setNotFound(false);
+        } else {
+          setNotFound(true);
+        }
         loadPaginationData(0, 0, []);
         setIsNewData(true);
+      } else {
+        setNotFound(false);
       }
     } catch (error) {
       console.error(error);
@@ -72,7 +80,7 @@ export default function HomeScreen(props) {
       <View>
         <SearchBar
           style={styles.inputSearch}
-          placeholder="Search movie..."
+          placeholder="Buscar pelicula..."
           onChangeText={setMovieSearch}
           value={movieSearch}
         />
@@ -83,6 +91,7 @@ export default function HomeScreen(props) {
           navigation={navigation}
           indexInput={indexItem}
           positionInput={positionItem}
+          notFound={notFound}
         />
       </View>
     </SafeAreaView>

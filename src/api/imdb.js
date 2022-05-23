@@ -6,6 +6,7 @@ import {
 } from "../commons/contants";
 export const searchMovie = async (search) => {
   try {
+    console.log(API_SEARCH(search));
     const data = (await ACTIVE_MOCK)
       ? mockSeach
       : (await fetch(API_SEARCH(search))).json();
